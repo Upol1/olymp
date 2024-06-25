@@ -5,16 +5,20 @@ import EditProduct from "../components/products/EditProduct";
 import AboutPage from "../pages/AboutPage";
 import AdminPage from "../pages/AdminPage";
 import ProductPage from "../pages/ProductPage";
+import AtletesPage from "../pages/AtletesPage";
+import SportsPage from "../pages/SportsPage";
+import LetsMovePage from "../pages/LetsMovePage";
 
 const MainRoutes = () => {
   const PUBLIC_ROUTES = [
     { id: 1, link: "/", element: <MainPage /> },
     { id: 2, link: "/products", element: <ProductPage /> },
     { id: 3, link: "/edit/:id", element: <EditProduct /> },
-    { id: 4, link: "/about", element: <AboutPage /> },
-    // { id: 5, link: "/contacts", element: <ContactsPage /> },
-    { id: 6, link: "/admin", element: <AdminPage /> },
-    // { id: 7, link: "/cart", element: <CartPage /> },
+    { id: 4, link: "/atletes", element: <AtletesPage /> },
+    { id: 5, link: "/sports", element: <SportsPage /> },
+    { id: 6, link: "/lets-move", element: <LetsMovePage /> },
+    { id: 7, link: "/admin", element: <AdminPage /> },
+    // { id: 8, link: "/cart", element: <CartPage /> },
   ];
   return (
     <Routes>

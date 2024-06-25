@@ -1,212 +1,134 @@
-import * as React from "react";
-import AppBar from "@mui/material/AppBar";
-import Box from "@mui/material/Box";
-import Toolbar from "@mui/material/Toolbar";
-import IconButton from "@mui/material/IconButton";
-import Typography from "@mui/material/Typography";
-import Menu from "@mui/material/Menu";
+import React from "react";
+import {
+  AppBar,
+  Toolbar,
+  Typography,
+  IconButton,
+  Menu,
+  MenuItem,
+} from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
-import Container from "@mui/material/Container";
-import Tooltip from "@mui/material/Tooltip";
 import { Link } from "react-router-dom";
-import { MenuItem } from "@mui/material";
-import { ShoppingCart } from "@mui/icons-material";
-import AnchorIcon from "@mui/icons-material/Anchor";
-import LunchDiningSharpIcon from "@mui/icons-material/LunchDiningSharp";
-import AdminPanelSettingsIcon from "@mui/icons-material/AdminPanelSettings";
 
-function Navbar() {
-  const [anchorElNav, setAnchorElNav] = React.useState(null);
-  const [anchorElUser, setAnchorElUser] = React.useState(null);
+const Navbar = () => {
+  const [anchorEl, setAnchorEl] = React.useState(null);
 
   const handleOpenNavMenu = (event) => {
-    setAnchorElNav(event.currentTarget);
-  };
-
-  const handleOpenUserMenu = (event) => {
-    setAnchorElUser(event.currentTarget);
+    setAnchorEl(event.currentTarget);
   };
 
   const handleCloseNavMenu = () => {
-    setAnchorElNav(null);
-  };
-
-  const handleCloseUserMenu = () => {
-    setAnchorElUser(null);
+    setAnchorEl(null);
   };
 
   const pages = [
-    { id: 1, title: "Products", link: "/products" },
-    { id: 4, title: "About", link: "/about" },
-    { id: 5, title: "Contacts", link: "/contacts" },
+    { id: 1, title: "Атлеты", link: "/athletes" },
+    { id: 2, title: "Виды", link: "/sports" },
+    { id: 3, title: "Let's Move", link: "/lets-move" },
   ];
-  // "#ff8085"
+
   return (
-    <AppBar
-      style={{
-        backgroundColor: "#4f94d4",
-        color: "#01263a",
-        border: " 5px solid black",
-      }} // Цвета Красти Краба
-      position="center"
-    >
-      <Container maxWidth="xl">
-        <Toolbar disableGutters>
-          <AnchorIcon sx={{ display: { xs: "none", md: "flex" }, mr: 1 }} />
-          <Typography
-            variant="h6"
-            noWrap
-            component="a"
-            href="/"
-            sx={{
-              mr: 2,
-              display: { xs: "none", md: "flex" },
-              fontFamily: "Amatic SC, cursive",
-              fontWeight: 700,
-              fontSize: 40,
-              letterSpacing: ".3rem",
-              color: "inherit",
-              textDecoration: "none",
-            }}
-          >
-            KRUSTY KRAB
-          </Typography>
-
-          <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
-            <IconButton
-              size="large"
-              aria-label="account of current user"
-              aria-controls="menu-appbar"
-              aria-haspopup="true"
-              onClick={handleOpenNavMenu}
-              color="inherit"
-            >
-              <MenuIcon />
-            </IconButton>
-            <Menu
-              id="menu-appbar"
-              anchorEl={anchorElNav}
-              anchorOrigin={{
-                vertical: "bottom",
-                horizontal: "left",
-              }}
-              keepMounted
-              transformOrigin={{
-                vertical: "top",
-                horizontal: "left",
-              }}
-              open={Boolean(anchorElNav)}
-              onClose={handleCloseNavMenu}
-              sx={{
-                display: { xs: "block", md: "none" },
-              }}
-            >
-              {pages.map((page) => (
-                <MenuItem key={page.id} onClick={handleCloseNavMenu}>
-                  <Typography textAlign="center">
-                    <Link
-                      to={page.link}
-                      style={{ textDecoration: "none", color: "inherit" }}
-                    >
-                      {page.title}
-                    </Link>
-                  </Typography>
-                </MenuItem>
-              ))}
-            </Menu>
-          </Box>
-
-          <Typography
-            variant="h5"
-            noWrap
-            component="a"
-            href="/"
-            sx={{
-              mr: 2,
-              display: { xs: "flex", md: "none" },
-              flexGrow: 1,
-              fontFamily: "Amatic SC, cursive",
-              fontWeight: 700,
-              letterSpacing: ".3rem",
-              color: "inherit",
-              textDecoration: "none",
-            }}
-          >
-            KRUSTY KRAB
-          </Typography>
-
-          <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
-            {pages.map((page) => (
-              <Link
-                key={page.id}
-                to={page.link}
-                style={{ textDecoration: "none", color: "inherit" }}
-              >
-                <MenuItem onClick={handleCloseNavMenu}>
-                  <Typography textAlign="center">{page.title}</Typography>
-                </MenuItem>
-              </Link>
-            ))}
-          </Box>
-
-          <Link
-            to="/admin"
-            style={{ textDecoration: "none", color: "inherit" }}
-          >
-            <MenuItem>
-              <Typography textAlign="center">
-                <AdminPanelSettingsIcon
-                  onClick={handleOpenUserMenu}
-                  sx={{ p: 0 }}
-                ></AdminPanelSettingsIcon>
-              </Typography>
-            </MenuItem>
-          </Link>
-
-          <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }} />
-
-          <Link to="/cart">
-            <ShoppingCart style={{ color: "#01263a" }} />
-          </Link>
-
-          <Box sx={{ flexGrow: 0 }}>
-            <Tooltip title="Open settings">
+    <div style={styles.root}>
+      <AppBar position="static">
+        <Toolbar style={styles.toolbar}>
+          <div style={styles.leftItems}>
+            <img
+              src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/Olympic_rings_without_rims.svg/800px-Olympic_rings_without_rims.svg.png"
+              alt="Olympic Rings"
+              style={{ ...styles.icon, width: "auto", height: 40 }}
+            />
+            <Typography variant="h6" style={styles.title}>
+              Олимпийские игры
+            </Typography>
+          </div>
+          <div style={styles.centerItems}>
+            {pages.map((page, index) => (
               <IconButton
-                onClick={handleOpenUserMenu}
-                sx={{ p: 0, color: "#01263a" }}
-                aria-controls="menu-appbar-user" // Уникальный id для меню пользователя
-                aria-haspopup="true"
+                key={page.id}
+                color="inherit"
+                component={Link}
+                to={page.link}
+                style={{
+                  ...styles.menuButton,
+                  marginLeft: index > 0 ? 10 : 0,
+                }}
               >
-                <LunchDiningSharpIcon />
+                <Typography variant="body1">{page.title}</Typography>
               </IconButton>
-            </Tooltip>
-            <Menu
-              id="menu-appbar-user"
-              anchorEl={anchorElUser}
-              anchorOrigin={{
-                vertical: "top",
-                horizontal: "right",
-              }}
-              keepMounted
-              transformOrigin={{
-                vertical: "top",
-                horizontal: "right",
-              }}
-              open={Boolean(anchorElUser)}
-              onClose={handleCloseUserMenu}
-            >
-              <MenuItem
-                sx={{ backgroundColor: "pink" }}
-                onClick={handleCloseUserMenu}
-              >
-                <Typography textAlign="center">[Admin]</Typography>
+            ))}
+          </div>
+          <div style={styles.rightItems}>
+            <img
+              src=""
+              alt=""
+              style={{ ...styles.icon, width: "auto", height: 40 }}
+            />
+          </div>
+          <IconButton
+            size="large"
+            edge="start"
+            color="inherit"
+            aria-label="menu"
+            style={styles.menuButton}
+            onClick={handleOpenNavMenu}
+          >
+            <MenuIcon />
+          </IconButton>
+          <Menu
+            anchorEl={anchorEl}
+            open={Boolean(anchorEl)}
+            onClose={handleCloseNavMenu}
+          >
+            {pages.map((page) => (
+              <MenuItem key={page.id} onClick={handleCloseNavMenu}>
+                <Typography variant="body1">
+                  <Link
+                    to={page.link}
+                    style={{ textDecoration: "none", color: "inherit" }}
+                  >
+                    {page.title}
+                  </Link>
+                </Typography>
               </MenuItem>
-            </Menu>
-          </Box>
+            ))}
+          </Menu>
         </Toolbar>
-      </Container>
-    </AppBar>
+      </AppBar>
+    </div>
   );
-}
+};
+
+const styles = {
+  root: {
+    flexGrow: 1,
+  },
+  toolbar: {
+    display: "flex",
+    justifyContent: "space-between",
+  },
+  leftItems: {
+    display: "flex",
+    alignItems: "center",
+  },
+  centerItems: {
+    display: "flex",
+    alignItems: "center",
+  },
+  rightItems: {
+    display: "flex",
+    alignItems: "center",
+  },
+  menuButton: {
+    marginRight: 10,
+  },
+  icon: {
+    width: "auto",
+    height: 40,
+    marginRight: 10,
+  },
+  title: {
+    marginLeft: 10,
+  },
+};
 
 export default Navbar;
