@@ -1,0 +1,9 @@
+.p:hover {
+  color: red; /* Цвет при наведении */
+  text-decoration: none;
+}
+
+title {
+  color: #ff4081; /* Цвет при наведении */
+  text-decoration: none;
+}

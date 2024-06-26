@@ -9,6 +9,7 @@ import {
 } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
 import { Link } from "react-router-dom";
+import "./Navbar.css";
 
 const Navbar = () => {
   const [anchorEl, setAnchorEl] = React.useState(null);
@@ -25,11 +26,12 @@ const Navbar = () => {
     { id: 1, title: "Атлеты", link: "/athletes" },
     { id: 2, title: "Виды", link: "/sports" },
     { id: 3, title: "Let's Move", link: "/lets-move" },
+    { id: 4, title: "Олимпийские игры", link: "/" },
   ];
 
   return (
     <div style={styles.root}>
-      <AppBar position="static">
+      <AppBar position="static" style={styles.appBar}>
         <Toolbar style={styles.toolbar}>
           <div style={styles.leftItems}>
             <img
@@ -37,7 +39,7 @@ const Navbar = () => {
               alt="Olympic Rings"
               style={{ ...styles.icon, width: "auto", height: 40 }}
             />
-            <Typography variant="h6" style={styles.title}>
+            <Typography className="p" variant="h6" style={styles.title}>
               Олимпийские игры
             </Typography>
           </div>
@@ -53,7 +55,9 @@ const Navbar = () => {
                   marginLeft: index > 0 ? 10 : 0,
                 }}
               >
-                <Typography variant="body1">{page.title}</Typography>
+                <Typography variant="body1" style={styles.menuItem}>
+                  {page.title}
+                </Typography>
               </IconButton>
             ))}
           </div>
@@ -72,7 +76,7 @@ const Navbar = () => {
             style={styles.menuButton}
             onClick={handleOpenNavMenu}
           >
-            <MenuIcon />
+            <MenuIcon style={styles.menuIcon} />
           </IconButton>
           <Menu
             anchorEl={anchorEl}
@@ -101,33 +105,56 @@ const Navbar = () => {
 const styles = {
   root: {
     flexGrow: 1,
+    overflow: "hidden",
+    width: "100%",
+    height: "auto",
+  },
+  appBar: {
+    backgroundColor: "#ffc2d1",
+    color: "#000000",
+    overflow: "hidden",
   },
   toolbar: {
     display: "flex",
     justifyContent: "space-between",
+    overflow: "hidden",
   },
   leftItems: {
     display: "flex",
     alignItems: "center",
+    overflow: "hidden",
   },
   centerItems: {
     display: "flex",
     alignItems: "center",
+    overflow: "hidden",
   },
   rightItems: {
     display: "flex",
     alignItems: "center",
+    overflow: "hidden",
   },
   menuButton: {
     marginRight: 10,
+    overflow: "hidden",
+  },
+  menuItem: {
+    color: "#000000",
   },
   icon: {
     width: "auto",
     height: 40,
     marginRight: 10,
+    overflow: "hidden",
+  },
+  menuIcon: {
+    color: "#000000",
   },
   title: {
     marginLeft: 10,
+    color: "#000000",
+    overflow: "hidden",
+    overflowY: "scroll",
   },
 };
 
