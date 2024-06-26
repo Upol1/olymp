@@ -1,0 +1,38 @@
+/* footer.css */
+
+/* Общие стили для ссылок внутри блока "Олимпийские игры" */
+#footer-container a {
+  display: block;
+  margin: 20px;
+  font-size: 18px;
+}
+
+/* Специфические стили для ссылок "Париж-2024", "Результаты и медали", "Повторы и лучшие моменты" и "Все Олимпийские игры" */
+#footer-container a:nth-child(2),
+#footer-container a:nth-child(3),
+#footer-container a:nth-child(4),
+#footer-container a:nth-child(5) {
+  margin-top: 5px;
+}
+
+/* Пример добавления других стилей для иконок социальных сетей внизу */
+#footer-container .social-icons {
+  margin-top: 30px;
+}
+
+#footer-container .social-icons .MuiIconButton-root {
+  margin: 0 10px;
+}
+Link:hover {
+  color: #ff4081; /* Цвет при наведении */
+  text-decoration: none; /* Подчеркивание при наведении */
+}
+h6:hover {
+  color: #ff4081; /* Цвет при наведении */
+  text-decoration: none;
+}
+
+a:hover {
+  color: red; /* Цвет при наведении */
+  text-decoration: none;
+}
