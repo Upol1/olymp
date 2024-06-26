@@ -26,7 +26,7 @@ const Navbar = () => {
     { id: 1, title: "Атлеты", link: "/athletes" },
     { id: 2, title: "Виды", link: "/sports" },
     { id: 3, title: "Let's Move", link: "/lets-move" },
-    { id: 4, title: "Олимпийские игры", link: "/" },
+    // { id: 4, title: "Олимпийские игры", link: "/" },
   ];
 
   return (
