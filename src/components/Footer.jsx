@@ -19,7 +19,7 @@ const Footer = () => {
               Олимпийские игры
             </Typography>
             <Link
-              href="#"
+              href="/"
               color="inherit"
               underline="none"
               sx={{
@@ -32,7 +32,7 @@ const Footer = () => {
               Париж-2024
             </Link>
             <Link
-              href="#"
+              href="/athletes"
               color="inherit"
               underline="none"
               sx={{
@@ -45,7 +45,7 @@ const Footer = () => {
               Результаты и медали
             </Link>
             <Link
-              href="#"
+              href="/athletes"
               color="inherit"
               underline="none"
               sx={{
@@ -58,7 +58,7 @@ const Footer = () => {
               Повторы и лучшие моменты
             </Link>
             <Link
-              href="#"
+              href="/sports"
               color="inherit"
               underline="none"
               sx={{ display: "block", marginBottom: "5px", fontSize: "18px" }}
@@ -91,7 +91,7 @@ const Footer = () => {
               Olympic Channel
             </Typography>
             <Link
-              href="#"
+              href="/lets-move"
               color="inherit"
               underline="none"
               sx={{
@@ -102,79 +102,21 @@ const Footer = () => {
                 fontSize: "18px",
               }}
             >
-              Телеканалы
+              Let's Move
             </Link>
             <Link
-              href="#"
+              href="/register"
               color="inherit"
               underline="none"
               sx={{
                 display: "block",
                 marginBottom: "5px",
+                marginTop: "20px",
                 margin: "20px",
                 fontSize: "18px",
               }}
             >
-              Соревнования Live
-            </Link>
-            <Link
-              href="#"
-              color="inherit"
-              underline="none"
-              sx={{
-                display: "block",
-                marginBottom: "5px",
-                margin: "20px",
-                fontSize: "18px",
-              }}
-            >
-              Оригинальные сюжеты
-            </Link>
-            <Link
-              href="#"
-              color="inherit"
-              underline="none"
-              sx={{
-                display: "block",
-                marginBottom: "5px",
-                margin: "20px",
-                fontSize: "18px",
-              }}
-            >
-              Корпоративные
-            </Link>
-          </Box>
-        </Grid>
-        <Grid item xs={12} sm={6} md={3}>
-          <Box sx={{ textAlign: "center", padding: "10px", margin: "20px" }}>
-            <Typography variant="h6" sx={{ marginBottom: "10px" }}>
-              Новости
-            </Typography>
-            <Link
-              href="#"
-              color="inherit"
-              underline="none"
-              sx={{
-                display: "block",
-                marginBottom: "5px",
-                margin: "20px",
-                fontSize: "18px",
-              }}
-            >
-              Подкаст
-            </Link>
-            <Link
-              href="#"
-              color="inherit"
-              underline="none"
-              sx={{
-                display: "block",
-                marginBottom: "5px",
-                margin: "20px",
-                fontSize: "18px",
-              }}
-            >
-              Темы
+              Регистрация
             </Link>
           </Box>
         </Grid>
@@ -184,7 +126,7 @@ const Footer = () => {
               Исследовать
             </Typography>
             <Link
-              href="#"
+              href="/athletes"
               color="inherit"
               underline="none"
               sx={{
@@ -197,7 +139,7 @@ const Footer = () => {
               Атлеты
             </Link>
             <Link
-              href="#"
+              href="/sports"
               color="inherit"
               underline="none"
               sx={{ display: "block", marginBottom: "5px" }}
