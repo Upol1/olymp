@@ -1,0 +1,253 @@
+/* Общие стили */
+.auth-container {
+  display: flex;
+  flex-direction: row;
+  height: 100vh;
+}
+
+.left-section {
+  flex: 1;
+  background-image: url("https://img.olympicchannel.com/images/image/private/f_auto/primary/tzu0jgh3w5t7towwf48u?w=3840&q=75.png");
+  background-size: cover;
+  background-position: center;
+}
+
+.right-section {
+  flex: 1;
+  background-color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.auth-form {
+  background-color: rgba(255, 255, 255, 0.9);
+  padding: 40px;
+  border-radius: 8px;
+  text-align: center;
+  width: 300px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+.auth-title {
+  margin-bottom: 20px;
+  font-size: 2.5rem;
+  color: #0047ab;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.input-group {
+  margin-bottom: 20px;
+}
+
+.input-group label {
+  display: block;
+  font-size: 1rem;
+  color: #333;
+  margin-bottom: 5px;
+}
+
+.input-group input {
+  width: calc(100% - 24px);
+  padding: 10px;
+  margin-top: 5px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1rem;
+}
+
+.error-msg {
+  color: #ff0000;
+  font-size: 0.8rem;
+  margin-top: 5px;
+}
+
+.btn-container {
+  margin-top: 20px;
+}
+
+.btn-container button {
+  width: 100%;
+  padding: 12px 0;
+  background-color: #ffcc00;
+  color: #0047ab;
+  border: none;
+  border-radius: 6px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.btn-container button:hover {
+  background-color: #0047ab;
+  color: #fff;
+}
+
+.btn-container p {
+  font-size: 0.9rem;
+  color: #666;
+  margin-top: 10px;
+}
+
+.btn-container span {
+  color: #0047ab;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.btn-container span:hover {
+  color: #002a5c;
+}
+
+/* Адаптивная верстка */
+@media (min-width: 1200px) {
+  /* Ноутбуки и выше */
+  .auth-container {
+    flex-direction: row;
+  }
+
+  .auth-form {
+    max-width: 400px;
+    padding: 30px;
+    margin-top: 0;
+  }
+
+  .auth-title {
+    font-size: 2.5rem;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1199px) {
+  /* Планшеты и небольшие ноутбуки */
+  .auth-container {
+    flex-direction: row;
+  }
+
+  .auth-form {
+    max-width: 350px;
+    padding: 20px;
+    margin-top: 0;
+  }
+
+  .auth-title {
+    font-size: 2rem;
+  }
+  h6.p.css-2ulfj5-MuiTypography-root {
+    font-size: 13px;
+  }
+  div.img {
+    width: 80px;
+    height: auto;
+  }
+  p.MuiTypography-root {
+    font-size: 13px;
+  }
+  div.MuiToolbar-root.MuiToolbar-gutters.MuiToolbar-regular.css-hyum1k-MuiToolbar-root {
+    width: 50;
+    height: auto;
+  }
+}
+
+@media (min-width: 425px) and (max-width: 1199px) {
+  /* Планшеты и небольшие ноутбуки */
+  .auth-container {
+    flex-direction: row;
+  }
+
+  .auth-form {
+    max-width: 350px;
+    padding: 20px;
+    margin-top: 0;
+  }
+
+  .auth-title {
+    font-size: 2rem;
+  }
+  h6.p.css-2ulfj5-MuiTypography-root {
+    font-size: 10px;
+  }
+  .container {
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+  }
+
+  #olympic-rings {
+    width: auto;
+    height: 28px;
+  }
+
+  p.MuiTypography-root {
+    font-size: 10px;
+  }
+  div.MuiToolbar-root.MuiToolbar-gutters.MuiToolbar-regular.css-hyum1k-MuiToolbar-root {
+    width: 50;
+    height: auto;
+  }
+  button.MuiButtonBase-root.MuiIconButton-root.MuiIconButton-colorInherit.MuiIconButton-edgeStartMuiIconButton-sizeLarge.css-184mzhy-MuiButtonBase-root-MuiIconButton {
+    width: 20px;
+    height: auto;
+    margin-right: -1000px;
+  }
+}
+
+@media (min-width: 576px) and (max-width: 767px) {
+  /* Большие мобильные устройства */
+  .auth-container {
+    flex-direction: column;
+  }
+
+  .auth-form {
+    max-width: 300px;
+    padding: 20px;
+  }
+
+  .auth-title {
+    font-size: 1.8rem;
+  }
+}
+
+@media (min-width: 360px) and (max-width: 575px) {
+  /* Средние мобильные устройства */
+  .auth-container {
+    flex-direction: column;
+  }
+
+  .auth-form {
+    max-width: 280px;
+    padding: 20px;
+  }
+
+  .auth-title {
+    font-size: 1.6rem;
+  }
+}
+
+@media (max-width: 359px) {
+  /* Небольшие мобильные устройства */
+  .auth-container {
+    flex-direction: column;
+  }
+
+  .auth-form {
+    max-width: 260px;
+    padding: 20px;
+  }
+
+  .auth-title {
+    font-size: 1.4rem;
+  }
+}
+
+/* Дополнительные стили для текстов */
+.auth-title {
+  margin-bottom: 10px; /* Добавлен отступ снизу для заголовка формы */
+}
+
+.btn-container p {
+  margin-top: 10px; /* Отступ сверху для текста под кнопкой */
+}
+
+.btn-container span {
+  margin-top: 10px; /* Отступ сверху для текста с ссылкой */
+}

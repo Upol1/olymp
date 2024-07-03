@@ -1,16 +1,16 @@
 import React from "react";
-
 import Navbar from "./components/homePage/Navbar";
 import MainRoutes from "./routes/MainRoutes";
 import Footer from "./components/Footer";
+import ProductContextProvider from "./components/context/ProductContextProvider";
 
 const App = () => {
   return (
-    <div>
+    <ProductContextProvider>
       <Navbar />
       <MainRoutes />
       <Footer />
-    </div>
+    </ProductContextProvider>
   );
 };
 

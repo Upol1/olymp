@@ -7,6 +7,7 @@ import LetsMovePage from "../pages/LetsMovePage";
 import AthletesPage from "../pages/AthletesPage";
 import AddAthletes from "../components/products/AddAthletes";
 import EditAthletes from "../components/products/EditAthletes";
+import Auth from "../auth/Auth";
 
 const MainRoutes = () => {
   const PUBLIC_ROUTES = [
@@ -17,7 +18,7 @@ const MainRoutes = () => {
     { id: 5, link: "/sports", element: <SportsPage /> },
     { id: 6, link: "/lets-move", element: <LetsMovePage /> },
     { id: 7, link: "/admin", element: <AdminPage /> },
-    // { id: 8, link: "/cart", element: <CartPage /> },
+    { id: 8, link: "/register", element: <Auth /> },
   ];
   return (
     <Routes>

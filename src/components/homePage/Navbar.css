@@ -7,3 +7,7 @@ title {
   color: #ff4081; /* Цвет при наведении */
   text-decoration: none;
 }
+h6 {
+  text-decoration: none;
+  color: red;
+}
