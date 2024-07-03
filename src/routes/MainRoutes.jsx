@@ -17,6 +17,7 @@ const MainRoutes = () => {
     { id: 5, link: "/sports", element: <SportsPage /> },
     { id: 6, link: "/lets-move", element: <LetsMovePage /> },
     { id: 7, link: "/admin", element: <AdminPage /> },
+
     // { id: 8, link: "/cart", element: <CartPage /> },
   ];
   return (

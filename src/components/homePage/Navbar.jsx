@@ -39,7 +39,7 @@ const Navbar = () => {
               alt="Olympic Rings"
               style={{ ...styles.icon, width: "auto", height: 40 }}
             />
-            <Typography className="p" variant="h6" style={styles.title}>
+            <Typography className="p" variant="h6">
               Олимпийские игры
             </Typography>
           </div>
@@ -68,34 +68,6 @@ const Navbar = () => {
               style={{ ...styles.icon, width: "auto", height: 40 }}
             />
           </div>
-          <IconButton
-            size="large"
-            edge="start"
-            color="inherit"
-            aria-label="menu"
-            style={styles.menuButton}
-            onClick={handleOpenNavMenu}
-          >
-            <MenuIcon style={styles.menuIcon} />
-          </IconButton>
-          <Menu
-            anchorEl={anchorEl}
-            open={Boolean(anchorEl)}
-            onClose={handleCloseNavMenu}
-          >
-            {pages.map((page) => (
-              <MenuItem key={page.id} onClick={handleCloseNavMenu}>
-                <Typography variant="body1">
-                  <Link
-                    to={page.link}
-                    style={{ textDecoration: "none", color: "inherit" }}
-                  >
-                    {page.title}
-                  </Link>
-                </Typography>
-              </MenuItem>
-            ))}
-          </Menu>
         </Toolbar>
       </AppBar>
     </div>
