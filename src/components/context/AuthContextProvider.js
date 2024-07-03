@@ -1,6 +1,6 @@
-import React, { createContext, useContext, useState, useEffect } from "react"; // Импортируем необходимые модули из React
-import fire from "../../fire"; // Импортируем Firebase конфигурацию
-import { useNavigate } from "react-router-dom"; // Импортируем хук для навигации
+import React, { createContext, useContext, useState, useEffect } from "react";
+import fire from "../../fire";
+import { useNavigate } from "react-router-dom";
 
 // Создаем контекст авторизации
 const authContext = createContext();
@@ -117,4 +117,4 @@ const AuthContextProvider = ({ children }) => {
   );
 };
 
-export default AuthContextProvider; // Экспортируем компонент провайдера контекста авторизации по умолчанию
+export default AuthContextProvider;
