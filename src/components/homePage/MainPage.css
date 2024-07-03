@@ -1,0 +1,137 @@
+.home-main-page {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url("https://img.olympics.com/images/image/private/t_s_pog_overview_hero_xl_2x/f_auto/primary/wganxha7is1rwzqw9qs7");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  font-family: "Comic Sans MS", "Comic Sans", cursive;
+}
+
+.content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* полупрозрачная черная обводка */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.content > div {
+  max-width: 800px;
+  padding: 20px;
+  text-align: center;
+  color: white;
+}
+
+.content img {
+  width: 100%;
+  max-width: 250px; /* уменьшенная ширина изображения для устройств до 320px */
+  margin-bottom: 20px;
+  border-radius: 10px;
+}
+
+.content h1 {
+  font-size: 48px;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.content h2 {
+  font-size: 36px;
+  margin-bottom: 20px;
+  color: #ffd60a;
+}
+
+.content p {
+  font-size: 24px;
+  line-height: 1.6;
+  color: #ffd60a;
+}
+
+@media screen and (max-width: 768px) {
+  .content > div {
+    padding: 10px;
+  }
+
+  .content h1 {
+    font-size: 36px;
+  }
+
+  .content h2 {
+    font-size: 28px;
+  }
+
+  .content p {
+    font-size: 18px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .content > div {
+    padding: 5px;
+  }
+
+  .content h1 {
+    font-size: 24px;
+  }
+
+  .content h2 {
+    font-size: 20px;
+  }
+
+  .content p {
+    font-size: 16px;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .content > div {
+    padding: 5px;
+  }
+
+  .content h1 {
+    font-size: 20px;
+  }
+
+  .content h2 {
+    font-size: 18px;
+  }
+
+  .content p {
+    font-size: 14px;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .content > div {
+    max-width: 280px;
+    padding: 10px;
+  }
+
+  .content img {
+    max-width: 250px;
+    margin-bottom: 10px;
+  }
+
+  .content h1 {
+    font-size: 36px;
+    margin-bottom: 8px;
+  }
+
+  .content h2 {
+    font-size: 28px;
+    margin-bottom: 16px;
+  }
+
+  .content p {
+    font-size: 18px;
+    line-height: 1.4;
+  }
+}
