@@ -13,6 +13,7 @@ const INIT_STATE = {
   oneAthlete: {},
   sports: [],
   categories: [], // Добавлено состояние для категорий
+
 };
 
 // Редюсер для управления состоянием
@@ -22,6 +23,36 @@ const productReducer = (state = INIT_STATE, action) => {
       return { ...state, athletes: action.payload };
     case "GET_ONE_ATHLETE":
       return { ...state, oneAthlete: action.payload };
+    case "TOGGLE_LIKE":
+      return {
+        ...state,
+        athletes: state.athletes.map((athlete) =>
+          athlete.id === action.payload
+            ? { ...athlete, liked: !athlete.liked }
+            : athlete
+        ),
+      };
+    case "ADD_COMMENT":
+      return {
+        ...state,
+        athletes: state.athletes.map((athlete) =>
+          athlete.id === action.payload.productId
+            ? {
+                ...athlete,
+                comments: [...athlete.comments, action.payload.comment],
+              }
+            : athlete
+        ),
+      };
+    case "TOGGLE_FAVORITE":
+      return {
+        ...state,
+        athletes: state.athletes.map((athlete) =>
+          athlete.id === action.payload
+            ? { ...athlete, favorite: !athlete.favorite }
+            : athlete
+        ),
+      };
     case "GET_SPORTS":
       return { ...state, sports: action.payload };
     case "GET_CATEGORIES": // Добавлен case для категорий
@@ -35,6 +66,13 @@ const ProductContextProvider = ({ children }) => {
   const navigate = useNavigate();
   const [state, dispatch] = useReducer(productReducer, INIT_STATE);
 
+  // Получение всех спортсменов
+  const getAthletes = async () => {
+    try {
+      const response = await axios.get(API_PRODUCTS);
+      dispatch({ type: "GET_ATHLETES", payload: response.data });
+    } catch (error) {
+      console.error("Error fetching athletes:", error);
   // Создание нового спортсмена
   const createAthlete = async (newAthlete) => {
     await axios.post(API_PRODUCTS, newAthlete);
@@ -73,6 +111,46 @@ const ProductContextProvider = ({ children }) => {
 
   // Редактирование данных спортсмена
   const editAthlete = async (id, editedAthlete) => {
+    try {
+      await axios.patch(`${API_PRODUCTS}/${id}`, editedAthlete);
+      getAthletes(); // Обновление списка спортсменов после редактирования
+      navigate("/athletes");
+    } catch (error) {
+      console.error("Error editing athlete:", error);
+    }
+  };
+
+  // Переключение лайка у спортсмена
+  const toggleLike = async (id) => {
+    try {
+      await axios.patch(`${API_PRODUCTS}/${id}`, { liked: true });
+      dispatch({ type: "TOGGLE_LIKE", payload: id });
+    } catch (error) {
+      console.error("Error toggling like:", error);
+    }
+  };
+
+  // Добавление комментария к спортсмену
+  const addComment = async (id, comment) => {
+    try {
+      // Логика добавления комментария
+      const updatedAthlete = {
+        comments: [...state.oneAthlete.comments, comment],
+      };
+      await axios.patch(`${API_PRODUCTS} /${id}`, updatedAthlete);
+      dispatch({ type: "ADD_COMMENT", payload: { productId: id, comment } });
+    } catch (error) {
+      console.error("Error adding comment:", error);
+    }
+  };
+
+  // Переключение состояния избранного у спортсмена
+  const toggleFavorite = async (id) => {
+    try {
+      await axios.patch(`${API_PRODUCTS}/${id}`, { favorite: true });
+      dispatch({ type: "TOGGLE_FAVORITE", payload: id });
+    } catch (error) {
+      console.error("Error toggling favorite:", error);
     await axios.patch(`${API_PRODUCTS}/${id}`, editedAthlete);
     getAthletes(); // Обновление списка спортсменов после редактирования
     navigate("/athletes");
@@ -121,6 +199,12 @@ const ProductContextProvider = ({ children }) => {
 
   // Объект значений, передаваемых через контекст
   const values = {
+
+    athletes: state.athletes,
+    oneAthlete: state.oneAthlete,
+    toggleLike,
+    addComment,
+    toggleFavorite,
     createAthlete,
     getAthletes,
     athletes: state.athletes,

@@ -7,11 +7,13 @@ import ProductContextProvider from "./components/context/ProductContextProvider"
 const App = () => {
   return (
     <ProductContextProvider>
+
       <div>
         <Navbar />
         <MainRoutes />
         <Footer />
       </div>
+
     </ProductContextProvider>
   );
 };
