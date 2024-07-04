@@ -44,14 +44,15 @@ const ProductContextProvider = ({ children }) => {
 
   // Получение всех спортсменов
   const getAthletes = (params = {}) => {
-    const searchParams = new URLSearchParams(params); // Добавлено для поддержки параметров
+    const searchParams = new URLSearchParams(params); // Создаем объект URLSearchParams из params для обработки параметров запроса
+
     axios
-      .get(`${API_PRODUCTS}?${searchParams}`) // Добавлено для поддержки параметров
+      .get(`${API_PRODUCTS}?${searchParams.toString()}`) // Преобразуем URLSearchParams в строку для использования в запросе
       .then((response) => {
-        dispatch({ type: "GET_ATHLETES", payload: response.data });
+        dispatch({ type: "GET_ATHLETES", payload: response.data }); // Отправляем данные в Redux store
       })
       .catch((error) => {
-        console.error("Error fetching athletes:", error);
+        console.error("Error fetching athletes:", error); // Ловим ошибки и выводим в консоль
       });
   };
 
