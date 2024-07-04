@@ -1,15 +1,19 @@
 import React from "react";
-import ReactDOM from "react-dom/client";
-import "./index.css";
-import App from "./App";
-import { BrowserRouter } from "react-router-dom";
-import ProductContextProvider from "./components/context/ProductContextProvider";
+import { createRoot } from "react-dom/client";
 
-const root = ReactDOM.createRoot(document.getElementById("root"));
+import { BrowserRouter as Router } from "react-router-dom";
+import App from "./App";
+import AuthContextProvider from "./components/context/AuthContextProvider";
+
+const container = document.getElementById("root");
+const root = createRoot(container);
+
 root.render(
-  <BrowserRouter>
-    <ProductContextProvider>
-      <App />
-    </ProductContextProvider>
-  </BrowserRouter>
-);
+  <React.StrictMode>
+    <Router>
+      <AuthContextProvider>
+        <App />
+      </AuthContextProvider>
+    </Router>
+  </React.StrictMode>
+)

@@ -1,0 +1,61 @@
+/* Центрируем контент и добавляем отступы */
+.container {
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+}
+
+/* Обеспечиваем адаптивность списка продуктов */
+.product-list {
+  /* Регулируем ширину списка продуктов */
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.product-card {
+  width: 100px;
+  height: auto;
+}
+
+@media (max-width: 1024px) {
+  .container {
+    padding: 15px;
+  }
+
+  .product-list {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 15px;
+  }
+
+  .product-card {
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 10px;
+  }
+
+  .product-list {
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 10px;
+  }
+
+  .product-card {
+  }
+}
+
+@media (max-width: 320px) {
+  .container {
+    padding: 5px;
+  }
+
+  .product-list {
+    grid-template-columns: 1fr;
+    gap: 5px;
+  }
+
+  .product-card {
+  }
+}
