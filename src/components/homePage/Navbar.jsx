@@ -1,5 +1,6 @@
 import React from "react";
 import { AppBar, Toolbar, Typography, IconButton } from "@mui/material";
+
 import { Link } from "react-router-dom";
 import { useAuth } from "../context/AuthContextProvider";
 
@@ -26,6 +27,18 @@ const Navbar = () => {
     pages.push({ id: 2, title: "Админ", link: "/Admin" });
   }
 
+import StarIcon from "@mui/icons-material/Star";
+import { Link } from "react-router-dom";
+
+const Navbar = () => {
+  const pages = [
+    { id: 1, title: "Атлеты", link: "/athletes" },
+    { id: 2, title: "Админ", link: "/admin" },
+    { id: 3, title: "Виды", link: "/sports" },
+    { id: 4, title: "Let's Move", link: "/lets-move" },
+  ];
+
+
   return (
     <div style={styles.root}>
       <AppBar position="static" style={styles.appBar}>
@@ -44,14 +57,16 @@ const Navbar = () => {
               <Typography
                 className="p"
                 variant="h6"
+
                 style={{ textDecoration: "none", color: "#000" }} // Текст "Олимпийские игры"
+
               >
                 Олимпийские игры
               </Typography>
             </Link>
           </div>
           <div style={{ ...styles.centerItems, flex: 1 }}>
-            {/* Контейнер для центральных элементов */}
+
             {pages.map((page, index) => (
               // Проходим по массиву страниц и создаем кнопки навигации
               <IconButton
@@ -70,6 +85,7 @@ const Navbar = () => {
               </IconButton>
             ))}
           </div>
+
           <div
             style={{
               ...styles.rightItems,
@@ -115,6 +131,19 @@ const Navbar = () => {
                 </Typography>
               </IconButton>
             )}
+
+          <div style={{ ...styles.rightItems, marginLeft: "auto" }}>
+            <IconButton
+              color="inherit"
+              component={Link}
+              to="/register"
+              style={styles.menuButton}
+            >
+              <Typography variant="body1" style={styles.menuItem}>
+                Регистрация
+              </Typography>
+            </IconButton>
+
           </div>
         </Toolbar>
       </AppBar>
@@ -146,10 +175,12 @@ const styles = {
     overflow: "hidden", // Отключаем прокрутку
   },
   centerItems: {
+
     display: "flex", // Устанавливаем флекс-контейнер для центральных элементов
     alignItems: "center", // Выравниваем элементы по центру по вертикали
     justifyContent: "center", // Выравниваем элементы по центру по горизонтали
     overflow: "hidden", // Отключаем прокрутку
+
   },
   rightItems: {
     display: "flex", // Устанавливаем флекс-контейнер для правых элементов
@@ -167,9 +198,11 @@ const styles = {
     textDecoration: "none", // Убираем подчеркивание у текста
     color: "#000", // Устанавливаем цвет текста
   },
+
   menuIcon: {
     color: "#000", // Устанавливаем цвет иконки меню
   },
+
 };
 
 export default Navbar; // Экспортируем компонент Navbar по умолчанию

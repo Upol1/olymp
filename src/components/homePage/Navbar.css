@@ -1,12 +1,13 @@
 .p:hover {
-  color: red; /* Цвет при наведении */
+  color: red;
   text-decoration: none;
 }
 
 title {
-  color: #ff4081; /* Цвет при наведении */
+  color: #ff4081;
   text-decoration: none;
 }
+
 h6 {
   text-decoration: none;
   color: red;
